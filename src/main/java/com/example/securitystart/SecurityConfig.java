@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                 .formLogin()
                     .loginPage("/login")
-                    .defaultSuccessUrl("/secret", true)
+                    .defaultSuccessUrl("/CreateAdvert", true)
                     .permitAll();
     }
 
