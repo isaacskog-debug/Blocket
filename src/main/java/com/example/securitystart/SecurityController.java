@@ -15,7 +15,7 @@ public class SecurityController {
 
     @GetMapping("/")
     public String start(Model model) {
-        model.addAttribute("repository", repository);
+        model.addAttribute("repository", repository.getAllAdverts());
         return "start";
     }
 
