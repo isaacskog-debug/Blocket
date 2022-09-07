@@ -7,10 +7,15 @@
 <body>
 <h1>Start</h1>
 
-<div th:each="advert:${repository}" th:text="${advert.id}">
+<table>
+    <tr>
+        <th>Title</th>
+    </tr>
+    <tr th:each="advert : ${repository}">
+        <th th:text="${advert.name}"></th>
+    </tr>
+</table>
 
-
-</div>
 
 <div>
     <a href="/secret">Secret</a>

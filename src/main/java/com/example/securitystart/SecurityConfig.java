@@ -1,3 +1,4 @@
+
 package com.example.securitystart;
 
 import org.springframework.context.annotation.Bean;
@@ -12,6 +13,8 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    /*
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -22,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                 .formLogin()
                     .loginPage("/login")
-                    .defaultSuccessUrl("/secret", true)
+                    .defaultSuccessUrl("/", true)
                     .permitAll();
     }
 
@@ -33,4 +36,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         manager.createUser(User.withDefaultPasswordEncoder().username("admin").password("123").roles("USER","ADMIN").build());
         return manager;
     }
+
+     */
 }

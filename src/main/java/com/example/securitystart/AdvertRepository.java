@@ -24,4 +24,7 @@ public class AdvertRepository {
         return null;
     }
 
+    public List<Advert> getAdverts() {
+        return adverts;
+    }
 }
