@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Secret</title>
+</head>
+<body>
+<h1>Very secret page!</h1>
+
+<div>
+    <p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Logout"/>
+    </form>
+
+    <h3>text här</h3>
+    <!--
+    id,name,price,description, url;
+
+    <form th:action="@{/login}" method="POST">
+        <div><label> id : <input type="text" name="username"/> </label></div>
+        <div><label> name: <input type="" name="password"/> </label></div>
+        <div><label> price: <input type="password" name="password"/> </label></div>
+        <div><label> description: <input type="password" name="password"/> </label></div>
+        <div><label> url: <input type="password" name="password"/> </label></div>
+        <div><input type="submit" value="Sign In"/></div>
+    </form>
+    -->
+
+    <form action="/CreateAdvert" method="post" th:object="${advert}">
+        <input type="text" th:field="*{id}"/>
+        <input type="text" th:field="*{name}"/>
+        <input type="text" th:field="*{price}"/>
+        <input type="text" th:field="*{description}"/>
+        <input type="text" th:field="*{url}"/>
+        <input type="submit" value="Create"/>
+    </form>
+
+    <div sec:authorize="hasRole('ROLE_ADMIN')">
+        <h2>Very very secret - only for admins!</h2>
+        <a href="/admin">Admin page</a>
+    </div>
+
+
+
+</div>
+
+</body>
+</html>

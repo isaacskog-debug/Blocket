@@ -16,6 +16,10 @@ public class Advert {
         this.url = url;
     }
 
+    public Advert(){
+
+    }
+
     public int getId() {
         return id;
     }

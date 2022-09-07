@@ -5,6 +5,8 @@ import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class SecurityController {
@@ -19,9 +21,16 @@ public class SecurityController {
         return "start";
     }
 
-    @GetMapping("/secret")
-    public String secret() {
-        return "secret";
+    @GetMapping("/CreateAdvert")
+    public String CreateAdvert(Model model) {
+        model.addAttribute(new Advert());
+
+        return "CreateAdvert";
+    }
+    @PostMapping("/CreateAdvert")
+    public String CreateAdvertPost(@ModelAttribute Advert advert){
+
+        return "CreateAdvert";
     }
 
     @GetMapping("/home")
