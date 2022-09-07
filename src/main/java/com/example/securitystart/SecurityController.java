@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -21,16 +22,26 @@ public class SecurityController {
         return "start";
     }
 
+    @GetMapping("/advert/{id}")
+    public String oneAd(@PathVariable int id, Model model) {
+
+        Advert advert = repository.getAdvert(id);
+        model.addAttribute("advert", advert);
+
+        return "advert";
+    }
+
     @GetMapping("/CreateAdvert")
     public String CreateAdvert(Model model) {
-        model.addAttribute(new Advert());
+        model.addAttribute("advert", new Advert());
 
         return "CreateAdvert";
     }
-    @PostMapping("/CreateAdvert")
+    @PostMapping("/save")
     public String CreateAdvertPost(@ModelAttribute Advert advert){
+        repository.addAdvert(advert);
 
-        return "CreateAdvert";
+        return "redirect:/";
     }
 
     @GetMapping("/home")

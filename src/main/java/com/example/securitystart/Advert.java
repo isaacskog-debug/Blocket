@@ -2,13 +2,13 @@ package com.example.securitystart;
 
 public class Advert {
 
-   private int id;
+    private Long id;
     private String name;
     private int price;
     private String description;
     private String url;
 
-    public Advert(int id, String name, int price, String description, String url) {
+    public Advert(Long id, String name, int price, String description, String url) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -20,11 +20,15 @@ public class Advert {
 
     }
 
-    public int getId() {
+    public boolean isNew() {
+        return this.id == null;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

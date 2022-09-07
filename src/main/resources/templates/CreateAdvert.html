@@ -27,7 +27,7 @@
     </form>
     -->
 
-    <form action="/CreateAdvert" method="post" th:object="${advert}">
+    <form action="/save" method="post" th:object="${advert}">
         <input type="text" th:field="*{id}"/>
         <input type="text" th:field="*{name}"/>
         <input type="text" th:field="*{price}"/>

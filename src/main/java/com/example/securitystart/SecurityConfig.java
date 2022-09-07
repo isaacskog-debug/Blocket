@@ -1,3 +1,4 @@
+/*
 package com.example.securitystart;
 
 import org.springframework.context.annotation.Bean;
@@ -16,7 +17,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/", "/home", "/h2", "/h2/**").permitAll()
+                    .antMatchers("/", "/home", "/h2", "/advert/**", "/save").permitAll()
                     .antMatchers("/admin").hasRole("ADMIN")
                     .anyRequest().authenticated()
                     .and()
@@ -34,3 +35,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return manager;
     }
 }
+*/

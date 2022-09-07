@@ -2,28 +2,25 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Start</title>
+    <title>Title</title>
 </head>
 <body>
-<h1>Adverts</h1>
 
+<h1>Advert</h1>
 <table>
     <tr>
         <th>Title</th>
-        <th>Price</th>
-    </tr>
-    <tr th:each="advert : ${repository}">
         <th th:text="${advert.name}"></th>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <th th:text="${advert.description}"></th>
+    </tr>
+    <tr>
+        <th>Price</th>
         <th th:text="${advert.price}"></th>
-        <th><a th:href="'/advert/' + ${advert.id}">Edit</a></th>
-
     </tr>
 </table>
-
-
-<div>
-    <a href="/CreateAdvert">CreateAdvert</a>
-</div>
 
 
 
