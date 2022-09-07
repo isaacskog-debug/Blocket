@@ -2,16 +2,26 @@ package com.example.securitystart;
 
 public class Advert {
 
+   private int id;
     private String name;
     private int price;
     private String description;
     private String url;
 
-    public Advert(String name, int price, String description, String url) {
+    public Advert(int id, String name, int price, String description, String url) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
         this.url = url;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
