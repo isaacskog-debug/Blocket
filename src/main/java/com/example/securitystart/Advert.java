@@ -1,5 +1,7 @@
 package com.example.securitystart;
 
+import org.springframework.stereotype.Repository;
+
 public class Advert {
 
     private Long id;

@@ -15,7 +15,7 @@
     <tr th:each="advert : ${repository}">
         <th th:text="${advert.name}"></th>
         <th th:text="${advert.price}"></th>
-        <th><a th:href="'/advert/' + ${advert.id}">Edit</a></th>
+        <th><a th:href="'/advert/' + ${advert.id}">Read more</a></th>
 
     </tr>
 </table>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:thref="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -10,15 +10,19 @@
 <table>
     <tr>
         <th>Title</th>
-        <th th:text="${advert.name}"></th>
+        <td th:text="${advert.name}"></td>
     </tr>
     <tr>
         <th>Description</th>
-        <th th:text="${advert.description}"></th>
+        <td th:text="${advert.description}"></td>
     </tr>
     <tr>
         <th>Price</th>
-        <th th:text="${advert.price}"></th>
+        <td th:text="${advert.price}"></td>
+    </tr>
+    <tr>
+        <a th:href="'/edit/' + ${advert.id}">Edit</a>
+        <th></th>
     </tr>
 </table>
 
