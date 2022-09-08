@@ -1,19 +1,31 @@
 package com.example.securitystart;
 
+import org.springframework.boot.convert.DataSizeUnit;
+//import javax.validation.constraints.Size;
+
 public class Advert {
 
+
     private Long id;
+    @Size(min=1, max=30)
     private String name;
+    @Size(min=1, max=30)
     private int price;
+    @Size(min=25, max=250)
     private String description;
     private String url;
+    @Size(min=1, max=10)
+    private String currency;
 
-    public Advert(Long id, String name, int price, String description, String url) {
+
+    public Advert(Long id, String name, int price, String currency, String description, String url) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.currency = currency;
         this.description = description;
         this.url = url;
+
     }
 
     public Advert(){
@@ -47,6 +59,10 @@ public class Advert {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    public String getCurrency() {return currency;}
+
+    public void setCurrency(String currency) {this.currency = currency;}
 
     public String getDescription() {
         return description;

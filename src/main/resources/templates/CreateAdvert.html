@@ -1,20 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html lang="en" style="display:flex;width:100%" xmlns:th="http://www.w3.org/1999/xhtml">
+<iframe title="adblockertest" class="pub_300x250 pub_300x250m pub_728x90 text-ad textAd
+text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
+        style="width:0;height:0;display:block"></iframe>
+<div class="LayoutStyles_FullHeightWrapper-sc-du5f0h-0 eVHPHo">
 <head>
+<body background="https://s.tmimgcdn.com/scr/800x500/207600/familj-online-shopping-gratis-vektor-illustration-koncept_207629-original.jpg">
+
+</body>
     <meta charset="UTF-8">
     <title>Secret</title>
+
+    <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
 </head>
 <body>
-<h1>Very secret page!</h1>
+<h1 style="font-size: 58px; color:red">Shop:it</h1>
+<h2> Create your advert here </h2>
 
-<div>
+<!--<div>
     <p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>
     <form th:action="@{/logout}" method="post">
         <input type="submit" value="Logout"/>
     </form>
 
     <h3>text här</h3>
-    <!--
+
     id,name,price,description, url;
 
     <form th:action="@{/login}" method="POST">
@@ -28,18 +38,23 @@
     -->
 
     <form action="/save" method="post" th:object="${advert}">
-        <input type="text" th:field="*{id}"/>
-        <input type="text" th:field="*{name}"/>
-        <input type="text" th:field="*{price}"/>
-        <input type="text" th:field="*{description}"/>
-        <input type="text" th:field="*{url}"/>
+        <p th:if="${#fields.hasErrors('name')}">Incorrect value in product name!</p>
+        <div><label> Product name : <input type="text" name="name"/> </label></div>
+        <p th:if="${#fields.hasErrors('price')}">Incorrect value in product price!</p>
+        <div><label> Product price : <input type="number" name="price"/> </label></div>
+        <p th:if="${#fields.hasErrors('description')}">Incorrect value in description!</p>
+        <div><label> Product description : <input type="text" name="description"/> </label></div>
+        <p th:if="${#fields.hasErrors('currency')}">Incorrect value in currency!</p>
+        <div><label> Product currency : <input type="text" name="currency"/> </label></div>
+
         <input type="submit" value="Create"/>
     </form>
 
-    <div sec:authorize="hasRole('ROLE_ADMIN')">
-        <h2>Very very secret - only for admins!</h2>
-        <a href="/admin">Admin page</a>
-    </div>
+    <!--<div sec:authorize="hasRole('ROLE_ADMIN')"> -->
+
+        <a href="http://localhost:8080/">Back to homepage</a>
+</body>
+</div>
 
 
 
