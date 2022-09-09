@@ -16,6 +16,7 @@ public class Advert {
     private String url;
     @Size(min=1, max=10)
     private String currency;
+    private int count;
 
 
     public Advert(Long id, String name, int price, String currency, String description, String url) {
@@ -25,6 +26,7 @@ public class Advert {
         this.currency = currency;
         this.description = description;
         this.url = url;
+        this.count = 1;
 
     }
 
@@ -82,6 +84,17 @@ public class Advert {
 
     @Override
     public String toString() {
-        return "Selected item: " + name + " Price: " + price;
+        return "Selected item: " + name + " Price: " + price + " " + count;
     }
+
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+
 }
