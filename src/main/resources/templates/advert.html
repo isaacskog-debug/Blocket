@@ -40,11 +40,15 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
 </table>
 <br>
 <a style="font-family: BlocketSans-Bold, sans-serif;" th:href="'/edit/' + ${advert.id}">Edit</a>
+&emsp;
+<a style="font-family: BlocketSans-Bold, sans-serif;" th:href="'/shoppingCart/' + ${advert.id}">Add to cart</a>
+
 <br>
 <br>
 <a style="font-family: BlocketSans-Bold, sans-serif;" href="http://localhost:8080/">Back to homepage</a>
 
-<a th:href="'/shoppingCart/' + ${advert.id}">Add to cart</a>
+
+
 
 
 </body>

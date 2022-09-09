@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="en" style="display:flex;width:100%" xmlns:th="http://www.w3.org/1999/xhtml">
+<iframe title="adblockertest" class="pub_300x250 pub_300x250m pub_728x90 text-ad textAd
+text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
+        style="width:0;height:0;display:block"></iframe>
+<div class="LayoutStyles_FullHeightWrapper-sc-du5f0h-0 eVHPHo">
+    <head>
+    <body background="https://static.vecteezy.com/system/resources/previews/001/613/356/non_2x/shopping-cart-and-commerce-icons-vector.jpg">
 
-<h1>Your cart</h1>
+    </body>
+
+    <h1 style="font-size: 58px; font-family: BlocketSans-Bold, sans-serif; color:red">Shop:it</h1>
+    <h2 style="font-family: BlocketSans-Bold, sans-serif;"> Your cart </h2>
 
 
 <table th:each="advert : ${session.cart}">
 
     <td th:text="${advert}"></td>
-    <td><a th:href="'/advert/' + ${advert.id}">&nbsp;Read more</a></td>
+    <td style="font-family: BlocketSans-Bold, sans-serif;"> <a th:href="'/advert/' + ${advert.id}">&nbsp;View product </a></td>
 
 </table>
 
 
 
 </body>
+</div>
 </html>
