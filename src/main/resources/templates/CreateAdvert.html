@@ -14,8 +14,8 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
 </head>
 <body>
-<h1 style="font-size: 58px; color:red">Shop:it</h1>
-<h2> Create your advert here </h2>
+<h1 style="font-size: 58px; font-family: BlocketSans-Bold, sans-serif; color:red">Shop:it</h1>
+<h2 style="font-family: BlocketSans-Bold, sans-serif;"> Create your advert here </h2>
 
 <!--<div>
     <p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>
@@ -39,20 +39,21 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
 
     <form action="/save" method="post" th:object="${advert}">
         <p th:if="${#fields.hasErrors('name')}">Incorrect value in product name!</p>
-        <div><label> Product name : <input type="text" name="name"/> </label></div>
+        <div><label> Product name : &emsp;&emsp;&nbsp;<input type="text" name="name"/> </label></div>
         <p th:if="${#fields.hasErrors('price')}">Incorrect value in product price!</p>
-        <div><label> Product price : <input type="number" name="price"/> </label></div>
+        <div><label> Product price : &emsp;&nbsp;&nbsp;&ensp;&nbsp;&nbsp;<input type="number" name="price"/> </label></div>
         <p th:if="${#fields.hasErrors('description')}">Incorrect value in description!</p>
         <div><label> Product description : <input type="text" name="description"/> </label></div>
         <p th:if="${#fields.hasErrors('currency')}">Incorrect value in currency!</p>
-        <div><label> Product currency : <input type="text" name="currency"/> </label></div>
-
+        <div><label> Product currency : &emsp;<input type="text" name="currency"/> </label></div>
+<br>
         <input type="submit" value="Create"/>
     </form>
 
     <!--<div sec:authorize="hasRole('ROLE_ADMIN')"> -->
+<br>
 
-        <a href="http://localhost:8080/">Back to homepage</a>
+        <a style="font-family: BlocketSans-Bold, sans-serif;" href="http://localhost:8080/">Back to homepage</a>
 </body>
 </div>
 

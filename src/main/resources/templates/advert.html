@@ -14,28 +14,35 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
 <body>
 
 <body style="width:100%">
-<h1 style="font-size: 58px; color:red">Shop:it</h1>
+<h1 style="font-size: 58px; font-family: BlocketSans-Bold, sans-serif; color:red">Shop:it</h1>
 
-<h2>Advert</h2>
+<h2 style="font-family: BlocketSans-Bold, sans-serif;"> Advert</h2>
 <table>
     <tr>
-        <th style="text-align:left"> Title:</th>
-        <th style="text-align:left": th:text="${advert.name}"></th>
+        <th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;text-align:left"> Title:</th>
+        <th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;text-align:left": th:text="${advert.name}"></th>
     </tr>
     <tr>
-        <th style="text-align:left"> Description:</th>
-        <th style="text-align:center": th:text="${advert.description}"></th>
+        <th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;text-align:left"> Description:</th>
+        <th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;text-align:left": th:text="${advert.description}"></th>
     </tr>
     <tr>
-        <th style="text-align:left"> Price: &nbsp; &nbsp; &nbsp;</th>
-        <th style="text-align:left": th:text="${advert.price}"></th>
+        <th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;text-align:left"> Price: &nbsp; &nbsp; &nbsp;</th>
+        <th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;text-align:left": th:text="${advert.price}"></th>
+    </tr>
+    <tr>
+        <th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;text-align:left"> Currency:</th>
+        <th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;text-align:left": th:text="${advert.currency}"></th>
     </tr>
 
 
 
 </table>
-<a th:href="'/edit/' + ${advert.id}">Edit</a>
-<a href="http://localhost:8080/">Back to homepage</a>
+<br>
+<a style="font-family: BlocketSans-Bold, sans-serif;" th:href="'/edit/' + ${advert.id}">Edit</a>
+<br>
+<br>
+<a style="font-family: BlocketSans-Bold, sans-serif;" href="http://localhost:8080/">Back to homepage</a>
 
 
 
