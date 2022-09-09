@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+
 @Controller
 public class SecurityController {
 
@@ -16,6 +19,9 @@ public class SecurityController {
     @GetMapping("/")
     public String start(Model model) {
         model.addAttribute("repository", repository.getAllAdverts());
+
+
+
         return "start";
     }
 
@@ -84,5 +90,27 @@ public class SecurityController {
         return "edit";
 
     }
+
+
+    @GetMapping("/shoppingCart/{id}")
+    String shoppingCart(HttpSession session, @PathVariable Long id) {
+
+        ArrayList<Advert> cart = (ArrayList<Advert>) session.getAttribute("cart");
+        if (cart == null) {
+            cart = new ArrayList<>();
+            session.setAttribute("cart", cart);
+        }
+
+        Advert advert = repository.getAdvert(id);
+        cart.add(advert);
+
+        return "shoppingCart";
+
+    }
+    @GetMapping("/cart")
+    String getCart() {
+        return "shoppingCart";
+    }
+
 
 }
