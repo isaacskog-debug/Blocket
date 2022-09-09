@@ -15,7 +15,7 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
 
 <table th:each="advert : ${session.cart}">
 
-    <td th:text="${advert}"></td>
+    <td style="font-family: BlocketSans-Bold, sans-serif;" th:text="${advert}"></td>
     <td style="font-family: BlocketSans-Bold, sans-serif;"> <a th:href="'/advert/' + ${advert.id}">&nbsp;View product </a></td>
 
 
