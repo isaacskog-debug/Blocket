@@ -16,29 +16,29 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
 
     </body>
 <body style="width:100%">
-                       <h1 style="font-size: 58px; color:red">Shop:it</h1>
+                       <h1 style="font-size: 58px; font-family: BlocketSans-Bold, sans-serif; color:red">Shop:it</h1>
 
-<h2> Adverts: </h2>
+<h2 style="font-family: BlocketSans-Bold, sans-serif;"> Adverts </h2>
 
 <table>
     <tr>
-        <th style="text-align:left">Title</th>
-        <th style="text-align:right"> Price</th>
+        <th style="font-size: 18px;font-family: BlocketSans-Bold, sans-serif;text-align:left">Title:</th>
+        <th style="font-size: 18px;font-family: BlocketSans-Bold, sans-serif;text-align:right">&emsp;&emsp;&emsp;Price:</th>
     </tr>
+</table>
 
-
-
+<table>
     <tr th:each="advert : ${repository}">
         &nbsp;
         &nbsp;
-        <th style="text-align:left": th:text="${advert.name}"></th>
+        <th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;text-align:left": th:text="${advert.name}"></th>
 
 
-        <th style="text-align:right": th:text="${advert.price}"></th>
+        <th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;text-align:right": th:text="${advert.price}"></th>
 
-            <th style="text-align:right": th:text="${advert.currency}"></th>
+            <th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;text-align:right": th:text="${advert.currency}"></th>
 
-            <th><a th:href="'/advert/' + ${advert.id}">&nbsp;Read more</a></th>
+            <th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;"> <a th:href="'/advert/' + ${advert.id}">&nbsp;Read more</a></th>
 
 
     </tr>
@@ -46,7 +46,8 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
 
 
 <div>
-    <a href="/CreateAdvert">Create Advert</a>
+    <br>
+    <a style="font-family: BlocketSans-Bold, sans-serif;" href="/CreateAdvert">Create Advert</a>
 </div>
 
 
