@@ -5,8 +5,7 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
         style="width:0;height:0;display:block"></iframe>
 <div class="LayoutStyles_FullHeightWrapper-sc-du5f0h-0 eVHPHo">
 <head>
-    <body background="https://png.pngtree.com/png-vector/20200410/ourlarge
-    /pngtree-man-and-female-online-shopping-concept-illustration-png-image_2179072.jpg">
+    <body background="https://png.pngtree.com/png-vector/20200410/ourlarge/pngtree-man-and-female-online-shopping-concept-illustration-png-image_2179072.jpg">
 
     </body>
     <meta charset="UTF-8">
@@ -31,8 +30,11 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
         <th style="text-align:left"> Price: &nbsp; &nbsp; &nbsp;</th>
         <th style="text-align:left": th:text="${advert.price}"></th>
     </tr>
-</table>
 
+
+
+</table>
+<a th:href="'/edit/' + ${advert.id}">Edit</a>
 <a href="http://localhost:8080/">Back to homepage</a>
 
 
