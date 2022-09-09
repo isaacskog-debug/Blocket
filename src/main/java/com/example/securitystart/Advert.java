@@ -84,7 +84,7 @@ public class Advert {
 
     @Override
     public String toString() {
-        return "Selected item: " + name + " Price: " + price + " " + count;
+        return "Selected item: " + name + " Price: " + (price *count )+" "+currency+" Amount: " + count;
     }
 
 

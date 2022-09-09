@@ -12,6 +12,7 @@
 <table th:each="advert : ${session.cart}">
 
     <td th:text="${advert}"></td>
+
     <td><a th:href="'/advert/' + ${advert.id}">&nbsp;Read more</a></td>
 
 </table>
