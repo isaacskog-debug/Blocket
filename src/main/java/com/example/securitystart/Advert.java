@@ -80,4 +80,8 @@ public class Advert {
         this.url = url;
     }
 
+    @Override
+    public String toString() {
+        return "Selected item: " + name + " Price: " + price;
+    }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,6 +7,16 @@
 <body>
 
 <h1>Your cart</h1>
+
+
+<table th:each="advert : ${session.cart}">
+
+    <td th:text="${advert}"></td>
+    <td><a th:href="'/advert/' + ${advert.id}">&nbsp;Read more</a></td>
+
+</table>
+
+
 
 </body>
 </html>

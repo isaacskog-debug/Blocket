@@ -20,6 +20,8 @@ public class SecurityController {
     public String start(Model model) {
         model.addAttribute("repository", repository.getAllAdverts());
 
+
+
         return "start";
     }
 
@@ -89,17 +91,20 @@ public class SecurityController {
 
     }
 
-    @PostMapping("/")
-    String shoppingCart(HttpSession session, @ModelAttribute Advert advert) {
+
+    @GetMapping("/shoppingCart/{id}")
+    String shoppingCart(HttpSession session, @PathVariable Long id) {
 
         ArrayList<Advert> cart = (ArrayList<Advert>) session.getAttribute("cart");
         if (cart == null) {
             cart = new ArrayList<>();
             session.setAttribute("cart", cart);
         }
+
+        Advert advert = repository.getAdvert(id);
         cart.add(advert);
 
-        return "checkout";
+        return "shoppingCart";
 
     }
     @GetMapping("/cart")
