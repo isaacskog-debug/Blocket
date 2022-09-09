@@ -16,12 +16,20 @@
         <th th:text="${advert.name}"></th>
         <th th:text="${advert.price}"></th>
         <th><a th:href="'/advert/' + ${advert.id}">Read more</a></th>
+        <th><a href="/cart">Add to cart</a></th>
+
+        <th><form action="/cart" method="post">
+            <input type="checkbox"/>
+
+            <input type="submit"/>
+        </form></th>
 
     </tr>
 </table>
 
 
 <div>
+    <a href="/cart">Shopping Cart</a>
     <a href="/CreateAdvert">CreateAdvert</a>
 </div>
 
