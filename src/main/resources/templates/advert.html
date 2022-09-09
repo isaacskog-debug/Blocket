@@ -1,32 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:thref="http://www.w3.org/1999/xhtml">
+<html lang="en" style="display:flex;width:100%" xmlns:th="http://www.w3.org/1999/xhtml">
+<iframe title="adblockertest" class="pub_300x250 pub_300x250m pub_728x90 text-ad textAd
+text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
+        style="width:0;height:0;display:block"></iframe>
+<div class="LayoutStyles_FullHeightWrapper-sc-du5f0h-0 eVHPHo">
 <head>
+    <body background="https://png.pngtree.com/png-vector/20200410/ourlarge
+    /pngtree-man-and-female-online-shopping-concept-illustration-png-image_2179072.jpg">
+
+    </body>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 
-<h1>Advert</h1>
+<body style="width:100%">
+<h1 style="font-size: 58px; color:red">Shop:it</h1>
+
+<h2>Advert</h2>
 <table>
     <tr>
-        <th>Title</th>
-        <td th:text="${advert.name}"></td>
+        <th style="text-align:left"> Title:</th>
+        <th style="text-align:left": th:text="${advert.name}"></th>
     </tr>
     <tr>
-        <th>Description</th>
-        <td th:text="${advert.description}"></td>
+        <th style="text-align:left"> Description:</th>
+        <th style="text-align:center": th:text="${advert.description}"></th>
     </tr>
     <tr>
-        <th>Price</th>
-        <td th:text="${advert.price}"></td>
-    </tr>
-    <tr>
-        <a th:href="'/edit/' + ${advert.id}">Edit</a>
-        <th></th>
+        <th style="text-align:left"> Price: &nbsp; &nbsp; &nbsp;</th>
+        <th style="text-align:left": th:text="${advert.price}"></th>
     </tr>
 </table>
+
+<a href="http://localhost:8080/">Back to homepage</a>
 
 
 
 </body>
+
+</body>
+</div>
 </html>

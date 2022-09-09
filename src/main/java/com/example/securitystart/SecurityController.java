@@ -4,7 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class SecurityController {
@@ -35,6 +39,7 @@ public class SecurityController {
         return "CreateAdvert";
     }
     @PostMapping("/save")
+
     public String CreateAdvertPost(@ModelAttribute Advert advert){
         repository.addAdvert(advert);
 
@@ -60,29 +65,4 @@ public class SecurityController {
     public String admin() {
         return "admin";
     }
-
-    @GetMapping("/edit/{id}")
-    public String editBook(@PathVariable Long id, Model model) {
-
-        Advert advert = repository.getAdvert(id);
-        model.addAttribute("advert", advert);
-
-        return "edit";
-
-    }
-    @PostMapping("/saveEdit/{id}")   //@PutMapping("/saveEdit/{ID}")
-    public String editPostBook(@ModelAttribute Advert advert, @PathVariable Long id) {
-    //public String editPostBook(@ModelAttribute Advert advert, @PathVariable Long id)
-        if (advert.getId() == null) {
-            advert.setId(id);
-        }
-
-        repository.editAdvert(advert);
-
-        //needs to be connected to the repository "put"
-
-        return "edit";
-
-    }
-
 }

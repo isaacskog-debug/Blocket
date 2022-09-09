@@ -9,11 +9,12 @@ public class AdvertRepository {
 
     private List<Advert>adverts;
 
+
     public AdvertRepository(){
         adverts=new ArrayList<>();
-        adverts.add(new Advert(1L,"Space ship",5000000,"Fying in space super great ship, you buy now","Holder"));
-        adverts.add(new Advert(2L,"Space ship2",5000000,"Fying in space super great ship, you buy now","Holder2"));
-        adverts.add(new Advert(3L,"Space ship3",5000000,"Fying in space super great ship, you buy now","Holder3"));
+        adverts.add(new Advert(1L,"Space ship",2000, "SEK","Flying in space super great ship, you buy now","Holder"));
+        adverts.add(new Advert(2L,"Java book",1500, "SEK","Java book for beginners. Used but looks new","Holder2"));
+        adverts.add(new Advert(3L,"Taxidermy fox",9000, "SEK","Hunted fox in a Swedish forest","Holder3"));
     }
     public Advert getAdvert(long id) {
         for (Advert advert : adverts) {
@@ -54,5 +55,5 @@ public class AdvertRepository {
     }
 
 
-
 }
+
