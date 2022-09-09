@@ -100,9 +100,18 @@ public class SecurityController {
             cart = new ArrayList<>();
             session.setAttribute("cart", cart);
         }
-
         Advert advert = repository.getAdvert(id);
-        cart.add(advert);
+
+        if (cart.contains(advert)) {
+            int i = cart.indexOf(advert);
+            advert = cart.get(i);
+            advert.setCount(advert.getCount()+1);
+        } else {
+            cart.add(advert);
+        }
+
+        //Advert advert = repository.getAdvert(id);
+        //cart.add(advert);
 
         return "shoppingCart";
 
