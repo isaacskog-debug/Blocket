@@ -5,6 +5,15 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
         style="width:0;height:0;display:block"></iframe>
 <div class="LayoutStyles_FullHeightWrapper-sc-du5f0h-0 eVHPHo">
     <head>
+        <style>
+        table {
+            border: solid 1px;
+            padding: 10 px;
+            background-color: lightgrey;
+            }
+
+    </style>
+
     <body background="https://static.vecteezy.com/system/resources/previews/001/613/356/non_2x/shopping-cart-and-commerce-icons-vector.jpg">
 
     </body>
@@ -16,7 +25,7 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
 <table th:each="advert : ${session.cart}">
 
     <td style="font-family: BlocketSans-Bold, sans-serif;" th:text="${advert}"></td>
-    <td style="font-family: BlocketSans-Bold, sans-serif;"> <a th:href="'/advert/' + ${advert.id}">&nbsp;View product </a></td>
+    <td style="font-family: BlocketSans-Bold, sans-serif;"> <a th:href="'/advert/' + ${advert.id}">&nbsp;Back to product</a></td>
 
 
 </table>

@@ -1,32 +1,38 @@
 package com.example.securitystart;
 
-import org.springframework.boot.convert.DataSizeUnit;
-//import javax.validation.constraints.Size;
+import javax.persistence.*;
+import java.util.Objects;
 
+//import javax.validation.constraints.Size;
+@Entity
 public class Advert {
 
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Size(min=1, max=30)
+    //@Size(min=1, max=30)
     private String name;
-    @Size(min=1, max=30)
+    //@Size(min=1, max=30)
     private int price;
-    @Size(min=25, max=250)
+    //@Size(min=25, max=250)
     private String description;
-    private String url;
-    @Size(min=1, max=10)
+    //private String url;
+    //@Size(min=1, max=10)
     private String currency;
-    private int count;
+
+    private Integer quantity = 1;
 
 
-    public Advert(Long id, String name, int price, String currency, String description, String url) {
+    public Advert(Long id, String name, int price, String currency, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.currency = currency;
         this.description = description;
-        this.url = url;
-        this.count = 1;
+        //this.url = url;
+        //this.count = 1;
+        //this.quantity = 1;
 
     }
 
@@ -73,7 +79,7 @@ public class Advert {
     public void setDescription(String description) {
         this.description = description;
     }
-
+/*
     public String getUrl() {
         return url;
     }
@@ -81,19 +87,32 @@ public class Advert {
     public void setUrl(String url) {
         this.url = url;
     }
-
+*/
     @Override
     public String toString() {
-        return "Selected item: " + name + " Price: " + (price *count )+" "+currency+" Amount: " + count;
+        return "Selected item: " + name + " Price: " + (price * quantity)+" "+currency+" Amount: " + quantity;
     }
 
 
-    public int getCount() {
-        return count;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Advert advert = (Advert) o;
+        return Objects.equals(name, advert.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 
 

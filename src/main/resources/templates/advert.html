@@ -5,6 +5,15 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
         style="width:0;height:0;display:block"></iframe>
 <div class="LayoutStyles_FullHeightWrapper-sc-du5f0h-0 eVHPHo">
 <head>
+    <style>
+        table {
+            border: solid 1px;
+            padding: 10 px;
+            background-color: lightgrey;
+            }
+
+    </style>
+
     <body background="https://png.pngtree.com/png-vector/20200410/ourlarge/pngtree-man-and-female-online-shopping-concept-illustration-png-image_2179072.jpg">
 
     </body>
@@ -17,6 +26,12 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
 <h1 style="font-size: 58px; font-family: BlocketSans-Bold, sans-serif; color:red">Shop:it</h1>
 
 <h2 style="font-family: BlocketSans-Bold, sans-serif;"> Advert</h2>
+
+<form th:action="'/shoppingCart/' + ${advert.id}">
+    <input type="submit" value="Add to cart">
+</form>
+
+
 <table>
     <tr>
         <th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;text-align:left"> Title:</th>
@@ -38,9 +53,10 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
 
 </table>
 <br>
+
+
 <a style="font-family: BlocketSans-Bold, sans-serif;" th:href="'/edit/' + ${advert.id}">Edit</a>
 &emsp;
-<a style="font-family: BlocketSans-Bold, sans-serif;" th:href="'/shoppingCart/' + ${advert.id}">Add to cart</a>
 
 <br>
 <br>
