@@ -118,7 +118,7 @@ public class SecurityController {
        // model.addAttribute("owner", owner);
 
 
-        return "advert";
+        return "newFormCreateIt"; //skapa en ny html för detta
 
 
 
