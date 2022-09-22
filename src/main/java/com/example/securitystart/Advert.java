@@ -23,6 +23,9 @@ public class Advert {
 
     private Integer quantity = 1;
 
+    @ManyToOne
+    private Owner owner;
+
 
     public Advert(Long id, String name, int price, String currency, String description) {
         this.id = id;
@@ -38,6 +41,18 @@ public class Advert {
 
     public Advert(){
 
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 
     public boolean isNew() {

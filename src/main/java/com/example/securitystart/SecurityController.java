@@ -19,6 +19,9 @@ public class SecurityController {
     @Autowired
     private AdvertRepository repository;
 
+    @Autowired
+    private OwnerRepository ownerRepository;
+
     @GetMapping("/")
     public String start(Model model) {
        // model.addAttribute("repository", repository.getAllAdverts());
@@ -99,6 +102,31 @@ public class SecurityController {
     String getCart() {
         return "shoppingCart";
     }
+
+    @GetMapping("/test/{id}")
+    public String addOwner(@PathVariable Long id, Model model) {
+        Advert advert = repository.findById(id).orElse(null);
+        //List<Owner> owner = ownerRepository.findByName(name);
+       // advert.setOwner(owner.get(0));
+
+        Owner owner = new Owner("Test", "Fest");
+        ownerRepository.save(owner);
+        advert.setOwner(owner);
+        repository.save(advert);
+
+        model.addAttribute("advert", advert);
+       // model.addAttribute("owner", owner);
+
+
+        return "advert";
+
+
+
+    }
+
+
+
+
 
 
 }
