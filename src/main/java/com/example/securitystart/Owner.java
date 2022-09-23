@@ -22,9 +22,9 @@ public class Owner {
 
     }
 
-    public Owner(String first, String last) {
-        this.firstName = first;
-        this.lastName = last;
+    public Owner(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public List<Advert> getAdverts() {
@@ -57,5 +57,10 @@ public class Owner {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "This advert was published by " + firstName + " " + lastName;
     }
 }

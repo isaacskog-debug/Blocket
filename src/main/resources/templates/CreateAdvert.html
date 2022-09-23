@@ -37,7 +37,8 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
     </form>
     -->
 
-    <form action="/save" method="post" th:object="${advert}">
+
+    <form th:action="'/save/' + ${owner.id}" method="post" th:object="${advert}">
         <p th:if="${#fields.hasErrors('name')}">Incorrect value in product name!</p>
         <div><label> Product name : &emsp;&emsp;&nbsp;<input type="text" name="name"/> </label></div>
         <p th:if="${#fields.hasErrors('price')}">Incorrect value in product price!</p>
@@ -46,9 +47,13 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
         <div><label> Product description : <input type="text" name="description"/> </label></div>
         <p th:if="${#fields.hasErrors('currency')}">Incorrect value in currency!</p>
         <div><label> Product currency : &emsp;<input type="text" name="currency"/> </label></div>
+
+
 <br>
         <input type="submit" value="Create"/>
     </form>
+
+
 
     <!--<div sec:authorize="hasRole('ROLE_ADMIN')"> -->
 <br>

@@ -12,10 +12,7 @@ import java.util.List;
 @Controller
 public class SecurityController {
 
-    /*
-    @Autowired
-    OldRepository repository;
-    */
+
     @Autowired
     private AdvertRepository repository;
 
@@ -24,7 +21,7 @@ public class SecurityController {
 
     @GetMapping("/")
     public String start(Model model) {
-       // model.addAttribute("repository", repository.getAllAdverts());
+
         List<Advert> adverts = (List<Advert>) repository.findAll();
         model.addAttribute("repository", adverts);
         return "start";
@@ -33,22 +30,25 @@ public class SecurityController {
     @GetMapping("/advert/{id}")
     public String oneAd(@PathVariable Long id, Model model) {
 
-        //Advert advert = repository.getAdvert(id);
         Advert advert = repository.findById(id).orElse(null);
         model.addAttribute("advert", advert);
 
         return "advert";
     }
 
-    @GetMapping("/CreateAdvert")
-    public String CreateAdvert(Model model) {
+    @GetMapping("/CreateAdvert/{id}")
+    public String CreateAdvert(Model model, @PathVariable Long id) {
         model.addAttribute("advert", new Advert());
+        //model.addAttribute("owner", new Owner());
+        Owner owner = ownerRepository.findById(id).orElse(null);
+        model.addAttribute("owner", owner);
 
         return "CreateAdvert";
     }
-    @PostMapping("/save")
-    public String CreateAdvertPost(@ModelAttribute Advert advert){
-      //  repository.addAdvert(advert);
+    @PostMapping("/save/{id}")
+    public String CreateAdvertPost(@ModelAttribute Advert advert, @PathVariable Long id){
+        Owner owner = ownerRepository.findById(id).orElse(null);
+        advert.setOwner(owner);
         repository.save(advert);
         return "redirect:/";
     }
@@ -56,7 +56,6 @@ public class SecurityController {
     @GetMapping("/edit/{id}")
     public String editBook(@PathVariable Long id, Model model) {
 
-        //Advert advert = repository.getAdvert(id);
         Advert advert = repository.findById(id).orElse(null);
         model.addAttribute("advert", advert);
 
@@ -69,7 +68,6 @@ public class SecurityController {
         if (advert.getId() == null) {
             advert.setId(id);
         }
-        //repository.editAdvert(advert);
         repository.save(advert);
         return "edit";
 
@@ -103,30 +101,20 @@ public class SecurityController {
         return "shoppingCart";
     }
 
-    @GetMapping("/test/{id}")
-    public String addOwner(@PathVariable Long id, Model model) {
-        Advert advert = repository.findById(id).orElse(null);
-        //List<Owner> owner = ownerRepository.findByName(name);
-       // advert.setOwner(owner.get(0));
 
-        Owner owner = new Owner("Test", "Fest");
-        ownerRepository.save(owner);
-        advert.setOwner(owner);
-        repository.save(advert);
-
-        model.addAttribute("advert", advert);
-       // model.addAttribute("owner", owner);
-
-
-        return "newFormCreateIt"; //skapa en ny html för detta
-
-
-
+    @GetMapping("/addOwner")
+    public String createOwner(Model model) {
+        model.addAttribute("owner", new Owner());
+        return "owner";
     }
 
+    @PostMapping("/addOwner")
+    public String addOwner(@ModelAttribute Owner owner) {
+        ownerRepository.save(owner);
+        //return "redirect:/CreateAdvert";
+        return "owner";
 
-
-
+    }
 
 
 }

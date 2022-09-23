@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<form action="/addOwner" method="POST" th:object="${owner}" >
+    <p>First name: <input type="text" th:field="*{firstName}"/>
+    <p>Last name: <input type="text" th:field="*{lastName}"/>
+    <p></p><input type="submit" value="Save">
+</form>
+
+<th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;"> <a th:href="'/CreateAdvert/' + ${owner.id}">Save first then click here to create advert</a></th>
+
+</body>
+</html>
