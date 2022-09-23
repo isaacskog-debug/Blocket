@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" style="display:flex;width:100%" xmlns:th="http://www.w3.org/1999/xhtml">
+<iframe title="adblockertest" class="pub_300x250 pub_300x250m pub_728x90 text-ad textAd
+text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
+        style="width:0;height:0;display:block"></iframe>
+<div class="LayoutStyles_FullHeightWrapper-sc-du5f0h-0 eVHPHo">
+</div>
+<style>
+ table {
+        border: solid 1px;
+        padding: 10 px;
+        background-color: lightgrey;
+        }
+
+</style>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Shop:it</title>
 </head>
-<body>
-
-
-
-<form action="/addOwner" method="POST" th:object="${owner}" >
-    <p>First name: <input type="text" th:field="*{firstName}"/>
-    <p>Last name: <input type="text" th:field="*{lastName}"/>
-    <p></p><input type="submit" value="Save">
-</form>
-
-<th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;"> <a th:href="'/CreateAdvert/' + ${owner.id}">Save first then click here to create advert</a></th>
+<body background="https://a.storyblok.com/f/79434/1500x900/1b8e210b35/detail-page-the-who-what-and-where-of-online-shopping-in-2023.png">
 
 </body>
+<body style="width:100%">
+<h1 style="font-size: 58px; font-family: BlocketSans-Bold, sans-serif; color:black">Shop:it</h1>
+</body>
+
+
+</style></head>
+
+<div class="flex-container">
+    <table>
+    <form action="/addOwner" method="POST" th:object="${owner}" >
+        <br>
+        <p>First name: <input type="text" th:field="*{firstName}"/>
+        <br>
+        <p>Last name: <input type="text" th:field="*{lastName}"/>
+        <br>
+
+            <p></p><input type="submit" value="Save">
+
+        <br>
+        <br>
+        <th style="font-size: 14px;font-family: BlocketSans-Bold, sans-serif;"><a th:href="'/CreateAdvert/' + ${owner.id}">Save first then click here to create advert</a></th>
+    </form>
+    </table>
+</div>
+
 </html>
