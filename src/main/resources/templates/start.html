@@ -20,6 +20,14 @@ text_ad text_ads text-ads text-ad-links -adv.js -adv.jpg"
 
 <h2 style="font-family: BlocketSans-Bold, sans-serif;"> Adverts </h2>
 
+                       <form action="/filter" method="GET">
+                           <select name="options" >
+                               <option value="sort1">Sort By Price</option>
+                               <option value="sort2">Sort By Name</option>
+                               <option value="sort3">No Sort</option>
+                           </select>
+                           <input type="submit" value="Sort"/>
+                       </form>
 <table>
     <tr>
         <th style="font-size: 18px;font-family: BlocketSans-Bold, sans-serif;text-align:left">Title:</th>
