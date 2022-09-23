@@ -117,4 +117,34 @@ public class SecurityController {
     }
 
 
+
+    @GetMapping("/filter")
+    public String filter(Model model,@RequestParam String options){
+        System.out.println(options);
+        if (options.equals("sort1")){
+            List<Advert>adverts=repository.sortByPrice();
+            model.addAttribute("repository",adverts);
+        }
+        else if (options.equals("sort2")){
+            List<Advert>adverts=repository.sortByName();
+            model.addAttribute("repository",adverts);
+        } else if (options.equals("sort3")) {
+            return "redirect:/";
+
+        }
+
+        return "start";
+    }
+    /*
+    @GetMapping("/filter/{selected}")
+    public String filter(@PathVariable String selected,Model model){
+        List<Advert>adverts=repository.filter(selected);
+        Advert advert=adverts.get(0);
+        //model.addAttribute("repository",adverts);
+        model.addAttribute("advert",advert);
+        return "test";
+    }
+
+     */
+
 }
